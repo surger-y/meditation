@@ -140,10 +140,27 @@ input[type="range"]::-webkit-slider-runnable-track {
   border-radius: 1px;
 }
 
+input[type="range"]::-moz-range-track {
+  width: 40%;
+  height: 2px;
+  background: rgba(0, 0, 0, 0); /*INVISIBLE*/
+  border-radius: 1px;
+}
+
 /* THUMB STYLE */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
+  width: 20px;
+  height: 20px; 
+  background: rgb(0, 8, 255); 
+  border-radius: 50%; 
+  margin-top: -9px; 
+  cursor: pointer;
+  filter: blur(10px);
+}
+
+input[type="range"]::-moz-range-thumb {
   width: 20px;
   height: 20px; 
   background: rgb(0, 8, 255); 
@@ -161,6 +178,13 @@ input[type="range"]::-webkit-slider-thumb {
     margin-top: -7px;
     filter: blur(6px);
   }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    margin-top: -7px;
+    filter: blur(6px);
+  }
 }
 
 /* fx1 STYLING */
@@ -169,7 +193,14 @@ input[type="range"].fx1::-webkit-slider-runnable-track {
 }
 
 input[type="range"].fx1::-webkit-slider-thumb {
-  /* background: #ddff00; */
+  background: rgb(0, 8, 255); 
+}
+
+input[type="range"].fx1::-moz-range-track {
+  width: 60%; /* Set the width of the track for the LFO slider */
+}
+
+input[type="range"].fx1::-moz-range-thumb {
   background: rgb(0, 8, 255); 
 }
 
@@ -179,10 +210,16 @@ input[type="range"].fx2::-webkit-slider-runnable-track {
 }
 
 input[type="range"].fx2::-webkit-slider-thumb {
-  /* background: #ddff00; */
   background: rgb(0, 8, 255); 
 }
 
+input[type="range"].fx2::-moz-range-track {
+  width: 60%; /* Set the width of the track for the LFO slider */
+}
+
+input[type="range"].fx2::-moz-range-thumb {
+  background: rgb(0, 8, 255); 
+}
 
 /* radio style */
 input[type="radio"] {
@@ -191,7 +228,6 @@ input[type="radio"] {
   margin: 1vh;
   width: 1em;
   height: 1em;
-  /* border: 0.15em solid rgb(255, 7, 251); */
   border: 0.15em solid rgb(0, 8, 255); 
   border-radius: 50%;
   transform: translateY(-0.075em);
@@ -208,7 +244,6 @@ input[type="radio"]::before {
   border-radius: 50%;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  /* box-shadow: inset 1em 1em rgb(255, 7, 251); */
   box-shadow: inset 1em 1em rgb(0, 8, 255);
   filter: blur(5px);
 }
@@ -216,3 +251,4 @@ input[type="radio"]::before {
 input[type="radio"]:checked::before {
   transform: scale(1);
 }
+
